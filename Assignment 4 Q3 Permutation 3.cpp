@@ -3,7 +3,7 @@
 #include <math.h>
 using namespace std::chrono;
 using namespace std;
-// ikj order
+// jki order
 int main()
 {   
      //  this is to run the code 3 times and automatically get geometric mean
