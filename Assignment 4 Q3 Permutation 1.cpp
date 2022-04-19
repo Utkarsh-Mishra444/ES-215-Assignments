@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std::chrono;
 using namespace std;
-
+// ijk order
 int main()
 {   int Nvals[3];
     Nvals[0] = 128;
