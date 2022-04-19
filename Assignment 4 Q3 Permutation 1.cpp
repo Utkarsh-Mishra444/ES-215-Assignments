@@ -8,10 +8,10 @@ int main()
     Nvals[0] = 128;
     Nvals[1] = 256;
     Nvals[2] = 512;
-    for (int i = 0; i < 3; i++)
+    for (int X = 0; X < 3; X++)
     {
     int sum = 0;
-    int N = Nvals[i];
+    int N = Nvals[X];
     int Matrix[N][N];
     int Product[N][N];
     //filling the matrix with numbers
@@ -38,7 +38,7 @@ int main()
     }
     auto stop1 = high_resolution_clock::now();
     auto duration1= duration_cast<microseconds>(stop1 - start1).count();
-    printf("Duration of meat portion in microseconds for N = %d is %d \n" , Nvals[i],duration1);
+    printf("Duration of meat portion in microseconds for N = %d is %d \n" , Nvals[X],duration1);
 
 }
 return 0;
