@@ -1,17 +1,24 @@
 #include <iostream>
 #include<bits/stdc++.h>
+#include <math.h>
 using namespace std::chrono;
 using namespace std;
 // ikj order
 int main()
-{   int Nvals[3];
+{   
+     //  this is to run the code 3 times and automatically get geometric mean
+    int Nvals[3];
     Nvals[0] = 128;
     Nvals[1] = 256;
     Nvals[2] = 512;
-    for (int i = 0; i < 3; i++)
+    float duration2[3] = {0};
+    for (int X = 0; X < 3; X++)
+    {
+        float duration3 = 0;
+    for(int Y = 0; Y<3 ; Y++)  //  this is to run the code 3 times and automatically get geometric mean
     {
     int sum = 0;
-    int N = Nvals[i];
+    int N = Nvals[X];
     int Matrix[N][N];
     int Product[N][N];
     //filling the matrix with numbers
@@ -38,8 +45,11 @@ int main()
     }
     auto stop1 = high_resolution_clock::now();
     auto duration1= duration_cast<microseconds>(stop1 - start1).count();
-    printf("Duration of meat portion in microseconds for N = %d is %d \n" , Nvals[i],duration1);
-
+    printf("Duration of meat portion in microseconds for N = %d and sample number %d is %ld \n" , Nvals[X],Y+1,duration1);
+    duration2[Y] = duration1;
+}
+duration3 = cbrt((duration2[0]*duration2[1]*duration2[2]));
+printf("Duration of meat portion in microseconds for N = %d and geometric mean of samples is %f \n" , Nvals[X],duration3);
 }
 return 0;
 }
